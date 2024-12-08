@@ -65,6 +65,29 @@ function convertValues() {
 function changeCurrency() {
     const currencyName = document.getElementById("currency-name")
     const currencyImage = document.querySelector(".currency-img")
+    const currencyNameConvert = document.getElementById("currency-name-convert")
+    const currencyImgToConvert = document.querySelector(".currency-img-to-convert")
+
+    if (currencySelectConvert.value == "idólar") {
+        currencyNameConvert.innerHTML = "Dólar americano"
+        currencyImgToConvert.src = "./img/dolar.png"
+    }
+    if (currencySelectConvert.value == "ieuro") {
+        currencyNameConvert.innerHTML = "Euro"
+        currencyImgToConvert.src = "./img/euro.png"
+    }
+    if (currencySelectConvert.value == "ilibra") {
+        currencyNameConvert.innerHTML = "Libra"
+        currencyImgToConvert.src = "./img/libra.png"
+    }
+    if (currencySelectConvert.value == "ireal") {
+        currencyNameConvert.innerHTML = "Real"
+        currencyImgToConvert.src = "./img/real.png"
+    }
+    if (currencySelectConvert.value == "ibitcoin") {
+        currencyNameConvert.innerHTML = "Bitcoin"
+        currencyImgToConvert.src = "./img/bitcoin.png"
+    }
 
     if (currencySelect.value == "dólar") {
         currencyName.innerHTML = "Dólar americano"
@@ -90,7 +113,7 @@ function changeCurrency() {
     convertValues()
 }
 
-
+currencySelectConvert.addEventListener("change", changeCurrency)
 currencySelect.addEventListener("change", changeCurrency)
 convertButton.addEventListener("click", convertValues)
 
